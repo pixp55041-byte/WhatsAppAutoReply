@@ -7,10 +7,10 @@ object FreeAI {
         val msg = message.lowercase(Locale.ROOT).trim()
 
         return when {
-            Regex(".*\\b(hello|hi|hey)\\b.*").matches(msg) ->
+            msg.contains("hello") || msg == "hi" || msg == "hey" ->
                 "Hey! How are you? 😊"
             msg.contains("how are you") ->
-                "I'm doing well, thanks! How are you? 😊"
+                "I'm fine! How are you? 😊"
             msg.contains("thank") ->
                 "You're welcome! 😊"
             msg.contains("good morning") ->
@@ -18,9 +18,9 @@ object FreeAI {
             msg.contains("good night") ->
                 "Good night! Take care 🌙"
             msg.contains("kaise ho") || msg.contains("कैसे हो") ->
-                "Main theek hoon 😊 Aap kaise ho?"
+                "Main bilkul theek hoon 😊 Aap kaise ho?"
             msg.contains("kya kar rahe") ->
-                "Abhi thoda busy hoon. Aap batao 😊"
+                "Abhi thoda busy hoon, aap batao 😊"
             msg.contains("namaste") || msg.contains("नमस्ते") ->
                 "Namaste! Kaise hain aap? 🙏"
             msg.contains("kem cho") || msg.contains("કેમ છો") ->
